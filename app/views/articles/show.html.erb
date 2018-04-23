@@ -1,0 +1,29 @@
+  <div class="section section-breadcrumbs">
+      <div class="container">
+        <div class="row">
+          <%= render 'message' %>
+          <div class="col-md-12">
+            <h1> <%= @article.title %></h1>
+            <h5 style="color: #fff;"> <%= @article.created_at.strftime("%d %m %Y") %></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class="well panel">
+    <p class="panel-heading">
+      <strong>Title:</strong>
+      <%= @article.title %>
+    </p>
+     
+    <p class="panel-body">
+      <strong>Text:</strong>
+      <%= @article.text %>
+    </p>
+ 
+  <div class="panel-footer">
+    <%= link_to 'Edit', edit_article_path(@article) , class: 'btn btn-warning'%> |
+    <%= link_to 'Back', articles_path, class: 'btn btn-info' %>
+  </div> 
+</div>
+
+

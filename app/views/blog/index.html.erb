@@ -1,0 +1,45 @@
+<!-- Page Title -->
+		<div class="section section-breadcrumbs">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h1>Blog Posts</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+        
+        <!-- Posts List -->
+        <div class="section blog-posts-wrapper">
+	    	<div class="container">
+				<div class="row">
+					<!-- Post -->
+				<% @blogs.each do |blog| %>
+					<div class="col-md-4 col-sm-6">
+						<div class="blog-post">
+							<div class="post-info">
+								<div class="post-date">
+									<div class="date"><%= @blog %></div>
+								</div>
+								<div class="post-comments-count">
+									<a href="page-blog-post-right-sidebar.html" title="Show Comments"><i class="glyphicon glyphicon-comment icon-white"></i>57</a>
+								</div>
+							</div>
+							<a href="/blog/<%= blog.id %>"><img src="/img/blog3.jpg" class="post-image" alt="Post Title"></a>
+							<div class="post-title">
+								<h3><a href="/blog/<%= blog.id %>"><%= blog.title %></a></h3>
+							</div>
+							<div class="post-summary">
+								<p><%=  truncate(blog.text, :length => 400, :omission => '... (continued)') %> </p>
+							</div>
+							<div class="post-more">
+								<a href="/blog/<%= blog.id %>" class="btn btn-small">Read More</a>
+							</div>
+						</div>
+					</div>
+				<% end %>
+
+				</div>
+			</div>
+	    </div>
+	    <!-- End Posts List -->
